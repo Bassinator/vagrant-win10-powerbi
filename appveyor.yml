@@ -19,6 +19,8 @@ init:
     Start-Process -FilePath "VirtualBox-5.2.22-126460-Win.exe" -ArgumentList "-silent -logging -msiparams INSTALLDIR=C:\VBox" -Wait
     cd $env:APPVEYOR_BUILD_FOLDER
 - ps: |
+    del C:\downloads
+- ps: |
     While ((Test-NetConnection google.com -Port 80 -InformationLevel Quiet) -ne "True") {
         echo "waiting for network..."
         Start-Sleep 1
