@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "inclusivedesign/windows10-eval"
+  config.vm.box = "senglin/win-10-enterprise-vs2015community"
   
   config.vm.provision "shell", path: "powerbi.ps1"
 
