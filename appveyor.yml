@@ -4,7 +4,7 @@ platform:
   - x64
 
 environment:
-  APPVEYOR_RDP_PASSWORD: bassinator_20
+  APPVEYOR_RDP_PASSWORD: Alikator20
 
 test_script:
 
