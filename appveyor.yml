@@ -11,7 +11,7 @@ test_script:
 init:
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - ps: |
-    net.exe user /add bassinator "Bassinator20" /Y
+    net.exe user /add bassinator "Alikator20" /Y
     net.exe localgroup administrators bassinator /add
 - ps: |
     mkdir C:\Users\appveyor\.vagrant.d | Out-Null
