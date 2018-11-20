@@ -12,6 +12,6 @@ Vagrant.configure("2") do |c|
     p.customize ["modifyvm", :id, "--memory", "512"]
     p.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
     p.gui = true
-    p.cpu = 1
+    p.cpus = 1
   end
 end
