@@ -2,7 +2,6 @@
 Vagrant.configure("2") do |c|
   #c.vm.box = "ubuntu/precise32"
   c.vm.box = "jasonc/centos7-32bit"
-  c.ssh.insert_key = false
   #c.vm.box = "chef/ubuntu-14.04-i386"
   #c.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/precise32/versions/12.04.4/providers/virtualbox.box"
   c.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty32/versions/14.04/providers/virtualbox.box"
