@@ -29,6 +29,7 @@ init:
     Start-FileDownload "https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe"
     Start-Process -FilePath "VirtualBox-5.2.22-126460-Win.exe" -ArgumentList "-silent -logging -msiparams INSTALLDIR=C:\VBox" -Wait
     cd $env:APPVEYOR_BUILD_FOLDER
+    Start-FileDownload "https://netcologne.dl.sourceforge.net/project/debian32bitvbox/OVA-image/vm1%5B32bit%5D.ova"
 - ps: |
     Remove-Item C:\downloads -Force -Recurse
 - ps: |
@@ -44,8 +45,7 @@ install:
 - ipconfig /all
 build_script:
 - ps: Test-NetConnection google.com -Port 80
-- vagrant up || ssh vagrant@127.0.0.1 -p 2222 -i .vagrant\machines\default\virtualbox\private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -vvv -C "pwd"
-- vagrant ssh -c "uname -a"
+- vboxmanage import vm1\[32bit\].ova 
 
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
