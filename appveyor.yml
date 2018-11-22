@@ -30,6 +30,7 @@ init:
     Start-Process -FilePath "VirtualBox-5.2.22-126460-Win.exe" -ArgumentList "-silent -logging -msiparams INSTALLDIR=C:\VBox" -Wait
     cd $env:APPVEYOR_BUILD_FOLDER
     Start-FileDownload "https://netcologne.dl.sourceforge.net/project/debian32bitvbox/OVA-image/vm1%5B32bit%5D.ova"
+    Start-FileDownload "http://dl-cdn.alpinelinux.org/alpine/v3.8/releases/x86/alpine-standard-3.8.1-x86.iso"
 - ps: |
     Remove-Item C:\downloads -Force -Recurse
 - ps: |
